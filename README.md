@@ -14,6 +14,8 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`start(...)`](#start)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -33,5 +35,30 @@ echo(options: { value: string; }) => any
 **Returns:** <code>any</code>
 
 --------------------
+
+
+### start(...)
+
+```typescript
+start(options: SceneOptions) => any
+```
+
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#sceneoptions">SceneOptions</a></code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### SceneOptions
+
+| Prop            | Type                | Description                                                | Since |
+| --------------- | ------------------- | ---------------------------------------------------------- | ----- |
+| **`sceneData`** | <code>string</code> | The base64 string of scene. This is only supported on iOS. | 0.0.1 |
 
 </docgen-api>

@@ -7,4 +7,8 @@ export class ARWeb extends WebPlugin implements ARPlugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async start(): Promise<any> {
+    throw this.unimplemented('Not implemented on web.');
+  }
 }

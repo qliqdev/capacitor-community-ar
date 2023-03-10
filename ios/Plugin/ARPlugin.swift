@@ -7,12 +7,22 @@ import Capacitor
  */
 @objc(ARPlugin)
 public class ARPlugin: CAPPlugin {
-    private let implementation = AR()
+    private var implementation: AR? = nil
+    
+    override public func load() {
+        self.implementation = AR(bridge: self.bridge!)
+    }
 
     @objc func echo(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
         call.resolve([
-            "value": implementation.echo(value)
+            "value": implementation!.echo(value)
+        ])
+    }
+    
+    @objc func start(_ call: CAPPluginCall) {
+        call.resolve([
+            "started": implementation!.start(call)
         ])
     }
 }
